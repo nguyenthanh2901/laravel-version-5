@@ -45,12 +45,12 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
-                <li class="active}"><a href="">Trang tổng quan </a></li>
-                <li class=""><a href="">Danh mục</a></li>
-               
-                
-                
-                
+                <li class="{{\Request::route()->getName()== 'admin.home' ? 'active' : ''}}"><a href="{{route('admin.home')}}">Trang tổng quan </a></li>
+                <li class="{{\Request::route()->getName()== 'admin.get.list.category' ? 'active' : ''}}"><a href="{{route('admin.get.list.category')}}">Danh mục</a></li>
+                <li class=" {{\Request::route()->getName()== 'admin.get.list.product' ? 'active' : ''}}"><a href="{{route('admin.get.list.product')}}">Sản phẩm</a></li>
+                <li class=" {{\Request::route()->getName()== 'admin.get.list.slide' ? 'active' : ''}}"><a href="{{route('admin.get.list.slide')}}">Slides</a></li>
+                <li class=" {{\Request::route()->getName()== 'admin.get.list.coupon' ? 'active' : ''}}"><a href="{{route('admin.get.list.coupon')}}">Mã giảm giá</a></li>   
+                <li class=" {{\Request::route()->getName()== 'admin.get.list.article' ? 'active' : ''}}"><a href="{{route('admin.get.list.article')}}">Tin tức</a></li>
             </ul>
 
         </div>
