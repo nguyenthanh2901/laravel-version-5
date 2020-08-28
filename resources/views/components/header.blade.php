@@ -120,8 +120,8 @@
                             </li>
                             <li><a href="#">Blog</a>
                                 <ul class="header__menu__dropdown">
-                                @if(isset($articleNew))
-                                @foreach($articleNew as $cate)
+                                @if(isset($article))
+                                @foreach($article as $cate)
                                     <li><a href="">{{$cate->a_name}}</a></li>
                                 @endforeach
                                 @endif

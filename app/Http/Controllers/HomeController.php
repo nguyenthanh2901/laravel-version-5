@@ -13,32 +13,33 @@ class HomeController extends FrontendController
     {
         $productSale = Product::where([
         'pro_active'=>Product::STATUS_PUBLIC
-        ])->orderBy('pro_sale','DESC')->limit(9)->get();
+        ])->orderBy('pro_sale','DESC')->limit(4)->get();
 
         $productHot = Product::where([
             'pro_hot'=>Product::HOT_ON,
             'pro_active'=>Product::STATUS_PUBLIC
-        ])->orderBy('id','ASC')->limit(10)->get();
+        ])->orderBy('id','ASC')->limit(4)->get();
 
         $productOldHot = Product::where([
             'pro_hot'=>Product::HOT_ON,
             'pro_active'=>Product::STATUS_PUBLIC
-        ])->orderBy('id','DESC')->limit(10)->get();
+        ])->orderBy('id','DESC')->limit(3)->get();
 
         $productNew = Product::where([
             'pro_active'=>Product::STATUS_PUBLIC
-        ])->orderby('id','DESC')->limit(10)->get();
+        ])->orderby('id','DESC')->limit(3)->get();
 
         $productOld = Product::where([
             'pro_active'=>Product::STATUS_PUBLIC
-        ])->orderby('id','ASC')->limit(10)->get();
+        ])->orderby('id','ASC')->limit(3)->get();
 
-        $articleNew =Article::orderby('id','DESC')->get();
+        $articleNew =Article::orderby('id','DESC')->limit(3)->get();
         $product = Product::where([
             'pro_active'=>Product::STATUS_PUBLIC
-        ])->orderby('id')->limit(20)->get();
+        ])->orderby('id')->limit(3)->get();
 
-        $slides = Slide::orderBy('id','ASC')->limit(10)->get();
+        $slides = Slide::orderBy('id','ASC')->limit(1)->get();
+        $banners = Slide::orderBy('id','DESC')->limit(2)->get();
         $viewData = [
             'productHot'=>$productHot,
             'productNew'=>$productNew,
@@ -48,6 +49,7 @@ class HomeController extends FrontendController
             'productOld'=>$productOld,
             'productSale'=>$productSale,
             'slides'=>$slides,
+            'banners'=>$banners,
         ];
 
 

@@ -12,10 +12,10 @@ class FrontendController extends Controller
     public function __construct()
     {
         $categories = Category::where('c_active',Category::STATUS_PUBLIC)->get();
-        $articleNew = Article::orderBy('a_name','DESC')->simplePaginate(5);
+        $article = Article::orderBy('a_name','DESC')->simplePaginate(5);
         $viewData= [
             'categories'=>$categories,
-            'articleNew'=>$articleNew
+            'article'=>$article
             ];
         View::share($viewData);
     }

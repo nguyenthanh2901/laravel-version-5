@@ -75,10 +75,10 @@
                <input type="text" placeholder="Màu sác"  class="form-control" value="{{old('pro_color', isset($product->pro_color)? $product->pro_color : '')}}" name="pro_color">
            </div>
 
-           <div class="form-group">
+           <!-- <div class="form-group">
                <label for="name"> Dung lượng:</label>
                <input type="text" placeholder="Dung lượng"  class="form-control" value="{{old('pro_memory', isset($product->pro_memory)? $product->pro_memory : '')}}" name="pro_memory">
-           </div>
+           </div> -->
 
            <div class="form-group">
                <label for="name"> % Giảm giá:</label>
