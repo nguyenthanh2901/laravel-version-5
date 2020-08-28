@@ -43,27 +43,28 @@ class AdminCategoryController extends Controller
         $this->insertOrUpdate($requestCategory,$id);
         return redirect()->back()->with('success','Cập nhật thành công');
     }
-    public function insertOrUpdate ($requestCategory, $id='0')
+    public function insertOrUpdate ($requestCategory, $id='')
     {
-        $code = 1;
-        try {
-            $category   = new Category();
-            if($id)
-            {
-                $category=Category::find($id);
-            }
+            $category = new Category();
+            if ($id) $category = Category::find($id);
             $category->c_name = $requestCategory->name;
             $category->c_slug = str_slug($requestCategory->name);
             $category->c_icon = str_slug($requestCategory->icon);
             $category->c_title_ceo  = $requestCategory->c_title_ceo ? $requestCategory->c_title_ceo : $requestCategory->name;
-            $category->c_description = $requestCategory-> c_description_ceo;
+            $category->c_description = $requestCategory->c_description_ceo;
+
+            
+            if ($requestCategory->hasFile('avatar'))
+            {
+                $file=upload_image('avatar');
+                if (isset($file['name']))
+                {
+                    $category->c_avartar=$file['name'];
+                }
+    
+            }
             $category->save();
-        } catch (\Exception $exception)
-        {
-            $code = 0;
-            Log::error("[Error insertOrUpdate Categories]".$exception->getMessage());
-        }
-        return $code;
+       
     }
     public function delete($id)
     {

@@ -33,7 +33,7 @@ class HomeController extends FrontendController
             'pro_active'=>Product::STATUS_PUBLIC
         ])->orderby('id','ASC')->limit(10)->get();
 
-        $articleNew =Article::orderby('id','DESC')->limit(10)->get();
+        $articleNew =Article::orderby('id','DESC')->get();
         $product = Product::where([
             'pro_active'=>Product::STATUS_PUBLIC
         ])->orderby('id')->limit(20)->get();

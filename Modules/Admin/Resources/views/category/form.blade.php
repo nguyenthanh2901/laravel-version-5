@@ -1,4 +1,4 @@
-<form action="" method="POST">
+<form action="" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="form-group">
         <label for="name">Tên danh mục:</label>
@@ -18,6 +18,15 @@
                     </span>
         @endif
     </div>
+
+    <div class="form-group">
+               <img  id="out_img" src="{{ asset('no_image.jpg') }}" alt="" style="width: 200px;height: 210px">
+    </div>
+    <div class="form-group">
+               <label for="name"> Logo:</label>
+               <input  type="file" name="avatar" id="input_img" class="form-control">
+     </div>
+
     <div class="form-group">
         <label for="name">Meta Title:</label>
         <input type="text" class="form-control" placeholder="Meta Title" value="{{old('c_title_ceo',isset($category->c_title_ceo)? $category->c_title_ceo: '')}}" name="c_title_ceo" >

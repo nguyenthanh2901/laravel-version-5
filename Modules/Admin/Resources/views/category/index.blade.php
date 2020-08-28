@@ -16,6 +16,7 @@
             <tr style="color: red; font-size: 20px">
                 <td>ID</td>
                 <td>Tên danh mục</td>
+                <td>Logo</td>
                 <td>Title</td>
                 <td>Trạng thái</td>
                 <td>Thao tác</td>
@@ -26,6 +27,9 @@
             <tr>
                 <td>{{$category->id}}</td>
                 <td>{{$category->c_name}}</td>
+                <td>
+                     <img src="{{ pare_url_file($category->c_avartar) }}" alt=""  style="width: 50px;height: 50px;">
+                </td>
                 <td>{{$category->c_title_ceo}}</td>
                 <td><a href="{{route('admin.get.action.category',['active',$category->id])}}">{{$category->getStatus($category->c_active)['name']}}</a></td>
                 <td>
