@@ -14,3 +14,9 @@
 
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::get('category/{slug}-{id}','CategoryController@getListProduct')->name('get.list.product');
+Route::get('product/{slug}-{id}','ProductDetailController@productDetail')->name('get.detail.product');
+Route::get('category','CategoryController@getListProduct')->name('get.product.list');
+
+Route::get('blog','ArticleController@getListArticle')->name('get.list.article');
+Route::get('blog/{slug}-{id}','ArticleController@getDetailArticle')->name('get.detail.article');

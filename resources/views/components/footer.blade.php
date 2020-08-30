@@ -50,7 +50,7 @@
                         <div class="footer__copyright__text"><p>
   Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved  <i class="fa fa-heart" aria-hidden="true"></i> by <a href="" target="_blank">ThanhBK</a>
   </p></div>
-                        <div class="footer__copyright__payment"><img src="img/payment-item.png" alt=""></div>
+                        <div class="footer__copyright__payment"><img src="{{asset('img/payment-item.png')}}" alt=""></div>
                     </div>
                 </div>
             </div>

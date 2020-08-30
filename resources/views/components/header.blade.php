@@ -109,20 +109,20 @@
                     <nav class="header__menu">
                         <ul>
                             <li class="active"><a href="{{route('home')}}">Home</a></li>
-                            <li><a href="#">Category</a>
+                            <li><a href="{{route('get.product.list')}}">Categories</a>
                                 <ul class="header__menu__dropdown">
                                 @if(isset($categories))
                                 @foreach($categories as $cate)
-                                    <li><a href="">{{$cate->c_name}}</a></li>
+                                    <li><a href="{{route('get.list.product',[$cate->c_slug, $cate->id])}}">{{$cate->c_name}}</a></li>
                                 @endforeach
                                 @endif
                                 </ul>
                             </li>
-                            <li><a href="#">Blog</a>
+                            <li><a href="{{route('get.list.article')}}">Blog</a>
                                 <ul class="header__menu__dropdown">
                                 @if(isset($article))
                                 @foreach($article as $cate)
-                                    <li><a href="">{{$cate->a_name}}</a></li>
+                                    <li><a href="{{route('get.detail.article',[$cate->a_slug,$cate->id])}}">{{$cate->a_name}}</a></li>
                                 @endforeach
                                 @endif
                                 </ul>

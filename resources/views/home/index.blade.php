@@ -13,7 +13,7 @@
                         <ul>
                         @if(isset($categories))
                         @foreach($categories as $cate)
-                            <li><a href="#">{{$cate -> c_name}}</a></li>
+                            <li><a href="{{route('get.list.product',[$cate->c_slug, $cate->id])}}">{{$cate -> c_name}}</a></li>
                             
                         @endforeach
                         @endif    
@@ -70,7 +70,7 @@
                 @foreach($categories as $new)
                     <div class="col-lg-3">
                         <div class="categories__item set-bg"  data-setbg="{{ pare_url_file($new->c_avartar) }}">
-                        <h5><a href="#">{{$new->c_name}}</a></h5>
+                        <h5><a href="{{route('get.list.product',[$new->c_slug, $new->id])}}">{{$new->c_name}}</a></h5>
                         </div>
                     </div>
                 @endforeach
@@ -114,7 +114,7 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">{{$productHot->pro_name}}</a></h6>
+                            <h6><a href="{{route('get.detail.product',[$productHot->pro_slug,$productHot->id])}}">{{$productHot->pro_name}}</a></h6>
                             <h5>{{$productHot->pro_price}}.00$</h5>
                         </div>
                     </div>
@@ -134,7 +134,7 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">{{$productHot->pro_name}}</a></h6>
+                            <h6><a href="{{route('get.detail.product',[$productHot->pro_slug,$productHot->id])}}">{{$productHot->pro_name}}</a></h6>
                             <h5>{{$productHot->pro_price}}.00$</h5>
                         </div>
                     </div>
@@ -154,7 +154,7 @@
             @foreach($banners as $banners)
                 <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="banner__pic">
-                    <a href=""><img src="{{pare_url_file($banners->s_avatar)}}" alt=""></a>
+                    <a href="{{route('get.product.list')}}"><img src="{{pare_url_file($banners->s_avatar)}}" alt=""></a>
                     </div>
                 </div>
             @endforeach
@@ -175,7 +175,7 @@
                             <div class="latest-prdouct__slider__item">
                             @if(isset($productOld))
                             @foreach($productOld as $productOld)
-                                <a href="#" class="latest-product__item">
+                                <a href="{{route('get.detail.product',[$productOld->pro_slug,$productOld->id])}}" class="latest-product__item">
                                     <div class="latest-product__item__pic">
                                         <img  src="{{pare_url_file($productOld->pro_avatar)}}" style="width: 110px;height: 110px;" alt="">
                                     </div>
@@ -190,7 +190,7 @@
                             <div class="latest-prdouct__slider__item">
                             @if(isset($productNew))
                             @foreach($productNew as $productOld)
-                                <a href="#" class="latest-product__item">
+                                <a href="{{route('get.detail.product',[$productOld->pro_slug,$productOld->id])}}" class="latest-product__item">
                                     <div class="latest-product__item__pic">
                                         <img  src="{{pare_url_file($productOld->pro_avatar)}}" style="width: 110px;height: 110px;" alt="">
                                     </div>
@@ -212,7 +212,7 @@
                             <div class="latest-prdouct__slider__item">
                             @if(isset($productNew))
                             @foreach($productNew as $productOld)
-                                <a href="#" class="latest-product__item">
+                                <a href="{{route('get.detail.product',[$productOld->pro_slug,$productOld->id])}}" class="latest-product__item">
                                     <div class="latest-product__item__pic">
                                         <img  src="{{pare_url_file($productOld->pro_avatar)}}" style="width: 110px;height: 110px;" alt="">
                                     </div>
@@ -228,7 +228,7 @@
                             <div class="latest-prdouct__slider__item">
                                 @if(isset($productOld))
                             @foreach($productNew as $productOld)
-                                <a href="#" class="latest-product__item">
+                                <a href="{{route('get.detail.product',[$productOld->pro_slug,$productOld->id])}}" class="latest-product__item">
                                     <div class="latest-product__item__pic">
                                         <img  src="{{pare_url_file($productOld->pro_avatar)}}" style="width: 110px;height: 110px;" alt="">
                                     </div>
@@ -250,7 +250,7 @@
                             <div class="latest-prdouct__slider__item">
                             @if(isset($productOldHot))
                             @foreach($productOldHot as $productOldHot)
-                                <a href="#" class="latest-product__item">
+                                <a href="{{route('get.detail.product',[$productOldHot->pro_slug,$productOldHot->id])}}" class="latest-product__item">
                                     <div class="latest-product__item__pic">
                                     <img  src="{{pare_url_file($productOldHot->pro_avatar)}}" style="width: 110px;height: 110px;" alt="">
                                     </div>
@@ -265,7 +265,7 @@
                             <div class="latest-prdouct__slider__item">
                             @if(isset($product))
                             @foreach($product as $productOldHot)
-                                <a href="#" class="latest-product__item">
+                                <a href="{{route('get.detail.product',[$productOldHot->pro_slug,$productOldHot->id])}}" class="latest-product__item">
                                     <div class="latest-product__item__pic">
                                     <img  src="{{pare_url_file($productOldHot->pro_avatar)}}" style="width: 110px;height: 110px;" alt="">
                                     </div>
@@ -308,7 +308,7 @@
                             <ul>
                                 <li><i class="fa fa-calendar-o"></i> {{$articleNew->created_at}}</li>
                             </ul>
-                            <h5><a href="#">{{$articleNew->a_description}}</a></h5>
+                            <h5><a href="{{route('get.detail.article',[$articleNew->a_slug,$articleNew->id])}}">{{$articleNew->a_description}}</a></h5>
                             <p>{{$articleNew->a_description}}... </p>
                         </div>
                     </div>
