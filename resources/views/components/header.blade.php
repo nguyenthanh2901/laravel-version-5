@@ -91,7 +91,13 @@
                                 </ul>
                             </div>
                             <div class="header__top__right__auth">
-                                <a href="#"><i class="fa fa-user"></i> Login</a>
+                                @if(Auth::check())
+                                <a href="{{route('get.logout.user')}}"><i class="fa fa-user"></i> Logout</a>
+                                @else 
+                                
+                                <a href="{{route('get.product.list')}}"><i class="fa fa-user"></i> Show now</a> 
+                                
+                                @endif
                             </div>
                         </div>
                     </div>

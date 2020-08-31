@@ -32,11 +32,11 @@ class RequestRegister extends FormRequest
     public function messages()
     {
         return [
-            'email.required'=>'Trường này không được để trống',
-            'email.unique'=> 'Email này đã được đăng ký tài khoản trước đó',
-            'phone.required'=>'Trường này không được để trống',
-            'password.required'=>'Trường này không được để trống',
-            'name.required'=>'Trường này không được để trống',
+            'email.required'=>'Not Null',
+            'email.unique'=> 'Email existed',
+            'phone.required'=>'Not Null',
+            'password.required'=>'Not Null',
+            'name.required'=>'Not Null',
             
 
 
