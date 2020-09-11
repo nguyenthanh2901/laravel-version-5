@@ -133,8 +133,8 @@
                                 @endif
                                 </ul>
                             </li>
-                            <li><a href="./contact.html">Contact</a></li>
-                                            <li><a href="./contact.html">About us</a></li>
+                            <li><a href="{{route('get.contact')}}">Contact</a></li>
+                             <li><a href="">About us</a></li>
 
                         </ul>
                     </nav>

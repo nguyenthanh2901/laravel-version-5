@@ -40,3 +40,6 @@ Route::get('category','CategoryController@getListProduct')->name('get.product.li
 
 Route::get('blog','ArticleController@getListArticle')->name('get.list.article');
 Route::get('blog/{slug}-{id}','ArticleController@getDetailArticle')->name('get.detail.article');
+
+Route::get('contact','ContactController@getContact')->name('get.contact');
+Route::post('contact','ContactController@saveContact');
