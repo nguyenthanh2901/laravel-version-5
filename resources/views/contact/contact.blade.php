@@ -73,13 +73,14 @@
                     </div>
                 </div>
             </div>
-            <form action="#">
+            <form action="" method ="post">
+            @csrf
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
-                        <input type="text" placeholder="Your name">
+                        <input name="c_name" type="text" placeholder="Your name">
                     </div>
                     <div class="col-lg-6 col-md-6">
-                        <input type="text" placeholder="Your Email">
+                        <input name="c_email" type="text" placeholder="Your Email">
                     </div>
                     <div class="col-lg-12 text-center">
                         <textarea placeholder="Your message"></textarea>
