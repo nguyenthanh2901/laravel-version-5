@@ -23,6 +23,6 @@ class ContactController extends FrontendController
         $data['created_at'] = $data['updated_at']  = Carbon::now();
         Contact::insert($data);
 
-        return redirect()->back();
+        return redirect()->back()->with('success','Success!');
     }
 }

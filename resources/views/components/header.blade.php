@@ -82,7 +82,7 @@
                                 <a href="#"><i class="fa fa-pinterest-p"></i></a>
                             </div>
                             <div class="header__top__right__language">
-                                <img src="img/language.png" alt="">
+                                <img src="{{asset('img/language.png')}}" alt="">
                                 <div>English</div>
                                 <span class="arrow_carrot-down"></span>
                                 <ul>
@@ -102,7 +102,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>  
         </div>
         <div class="container">
             <div class="row">
@@ -134,7 +134,7 @@
                                 </ul>
                             </li>
                             <li><a href="{{route('get.contact')}}">Contact</a></li>
-                             <li><a href="">About us</a></li>
+                             <li><a href="{{route('get.contact')}}">About us</a></li>
 
                         </ul>
                     </nav>
@@ -142,10 +142,10 @@
                 <div class="col-lg-3">
                     <div class="header__cart">
                         <ul>
-                            <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                            <!-- <li><a href="#"><i class="fa fa-heart"></i> <span></span></a></li> -->
+                            <li><a href="{{route('get.list.shopping.cart')}}"><i class="fa fa-shopping-bag"></i> <span>{{Cart::count()}}</span></a></li>
                         </ul>
-                        <div class="header__cart__price">item: <span>$150.00</span></div>
+                        <div class="header__cart__price">item: <span>${{ \Cart::total() }}</span></div>
                     </div>
                 </div>
             </div>

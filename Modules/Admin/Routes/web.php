@@ -64,4 +64,9 @@ Route::prefix('admin')->group(function() {
         Route:: get('/{action}/{id}', 'AdminCouponController@action')-> name('admin.get.action.coupon');
         Route:: get('/delete/{id}', 'AdminCouponController@delete')-> name('admin.get.delete.coupon');
     });
+    Route::group(['prefix' => 'contact'],function (){
+        Route::get('/','AdminContactController@index')->name('admin.get.list.contact');
+        Route::get('/action/{name}/{id}','AdminContactController@action')->name('admin.action.contact');
+        Route::get('/delete/{id}','AdminContactController@delete')->name('admin.get.delete.contact');
+    });
 });

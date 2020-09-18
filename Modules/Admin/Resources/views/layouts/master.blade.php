@@ -33,7 +33,7 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#"></a></li>
-                <li><a class="navbar-brand" href="">Đăng xuất</a></li>
+                <li><a class="navbar-brand" href="">Log out</a></li>
 
 
             </ul>
@@ -45,12 +45,14 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
-                <li class="{{\Request::route()->getName()== 'admin.home' ? 'active' : ''}}"><a href="{{route('admin.home')}}">Trang tổng quan </a></li>
-                <li class="{{\Request::route()->getName()== 'admin.get.list.category' ? 'active' : ''}}"><a href="{{route('admin.get.list.category')}}">Danh mục</a></li>
-                <li class=" {{\Request::route()->getName()== 'admin.get.list.product' ? 'active' : ''}}"><a href="{{route('admin.get.list.product')}}">Sản phẩm</a></li>
+                <li class="{{\Request::route()->getName()== 'admin.home' ? 'active' : ''}}"><a href="{{route('admin.home')}}">Dashboard</a></li>
+                <li class="{{\Request::route()->getName()== 'admin.get.list.category' ? 'active' : ''}}"><a href="{{route('admin.get.list.category')}}">Categories</a></li>
+                <li class=" {{\Request::route()->getName()== 'admin.get.list.product' ? 'active' : ''}}"><a href="{{route('admin.get.list.product')}}">Products</a></li>
                 <li class=" {{\Request::route()->getName()== 'admin.get.list.slide' ? 'active' : ''}}"><a href="{{route('admin.get.list.slide')}}">Slides</a></li>
-                <li class=" {{\Request::route()->getName()== 'admin.get.list.coupon' ? 'active' : ''}}"><a href="{{route('admin.get.list.coupon')}}">Mã giảm giá</a></li>   
-                <li class=" {{\Request::route()->getName()== 'admin.get.list.article' ? 'active' : ''}}"><a href="{{route('admin.get.list.article')}}">Tin tức</a></li>
+                <li class=" {{\Request::route()->getName()== 'admin.get.list.coupon' ? 'active' : ''}}"><a href="{{route('admin.get.list.coupon')}}">Coupons</a></li>   
+                <li class=" {{\Request::route()->getName()== 'admin.get.list.article' ? 'active' : ''}}"><a href="{{route('admin.get.list.article')}}">Blogs</a></li>
+                <li class=" {{\Request::route()->getName()== 'admin.get.list.contact' ? 'active' : ''}}"><a href="{{route('admin.get.list.contact')}}">Contacts</a></li>
+
             </ul>
 
         </div>

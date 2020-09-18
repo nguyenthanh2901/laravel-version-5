@@ -43,3 +43,10 @@ Route::get('blog/{slug}-{id}','ArticleController@getDetailArticle')->name('get.d
 
 Route::get('contact','ContactController@getContact')->name('get.contact');
 Route::post('contact','ContactController@saveContact');
+
+Route::prefix('shopping')->group(function () {
+    Route::get('/add/{id}','ShoppingCartController@addProduct')->name('add.shopping.cart');
+    Route::get('/delete/{id}','ShoppingCartController@deleteProductItem')->name('delete.shopping.cart');
+    Route::get('/list','ShoppingCartController@getListShoppingCart')->name('get.list.shopping.cart');
+    Route::get('/update/{id}','ShoppingCartController@updateShoppingCart')->name('ajax.get.shopping.update');
+});
