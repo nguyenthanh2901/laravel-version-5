@@ -50,3 +50,8 @@ Route::prefix('shopping')->group(function () {
     Route::get('/list','ShoppingCartController@getListShoppingCart')->name('get.list.shopping.cart');
     Route::get('/update/{id}','ShoppingCartController@updateShoppingCart')->name('ajax.get.shopping.update');
 });
+Route::group(['prefix' => 'cart'],function(){
+    Route::get('/payment','ShoppingCartController@getFormPay')->name('get.form.pay');
+    Route::post('/payment','ShoppingCartController@saveInfoShoppingCart');
+   
+});

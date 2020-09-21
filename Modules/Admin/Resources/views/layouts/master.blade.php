@@ -52,7 +52,7 @@
                 <li class=" {{\Request::route()->getName()== 'admin.get.list.coupon' ? 'active' : ''}}"><a href="{{route('admin.get.list.coupon')}}">Coupons</a></li>   
                 <li class=" {{\Request::route()->getName()== 'admin.get.list.article' ? 'active' : ''}}"><a href="{{route('admin.get.list.article')}}">Blogs</a></li>
                 <li class=" {{\Request::route()->getName()== 'admin.get.list.contact' ? 'active' : ''}}"><a href="{{route('admin.get.list.contact')}}">Contacts</a></li>
-
+                <li class=" {{\Request::route()->getName()== 'admin.get.list.transaction' ? 'active' : ''}}"><a href="{{route('admin.get.list.transaction')}}">Transactions</a></li>
             </ul>
 
         </div>

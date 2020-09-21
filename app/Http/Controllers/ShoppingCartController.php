@@ -136,12 +136,11 @@ class ShoppingCartController extends FrontendController
         $transactionId = 	Transaction::insertGetId([
             'tr_user_id' => (get_data_user('web')) ? get_data_user('web') : '0' ,
             'tr_total'   =>  (int)$request->total,
-            'tr_note'    => $request->note,
-            'tr_address' => $request->address,
-            'tr_phone'   => $request->phone,
-            'tr_user_name'=>$request->name,
-            'tr_phone'   => $request->phone,
-            'tr_type'    =>$request->type,
+            'tr_note'    => $request->tr_note,
+            'tr_address' => $request->tr_address,
+            'tr_phone'   => $request->tr_phone,
+            'tr_user_name'=>$request->tr_name,
+            'tr_type'    =>$request->tr_type,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);
@@ -152,7 +151,7 @@ class ShoppingCartController extends FrontendController
         if ($transactionId)
         {
             $products = \Cart::content();
-            Mail::to( $request->email)->send(new ShoppingMail($products));
+            // Mail::to( $request->email)->send(new ShoppingMail($products));
             foreach ($products as $product)
             {
                 Order::insert([

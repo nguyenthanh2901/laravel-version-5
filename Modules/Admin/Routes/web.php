@@ -69,4 +69,16 @@ Route::prefix('admin')->group(function() {
         Route::get('/action/{name}/{id}','AdminContactController@action')->name('admin.action.contact');
         Route::get('/delete/{id}','AdminContactController@delete')->name('admin.get.delete.contact');
     });
+
+    Route:: group(['prefix'=>'transaction'], function ()
+    {
+        Route:: get('/', 'AdminTransactionController@index')-> name('admin.get.list.transaction');
+        Route::get('/view/{id}','AdminTransactionController@viewOrder')->name('admin.get.view.order');
+        Route::get('/active/{id}','AdminTransactionController@actionTransaction')->name('admin.get.active.transaction');
+        Route::get('/delete/{id}','AdminTransactionController@delete')->name('admin.get.delete.transaction');
+
+        Route::get('/update/{id}','AdminTransactionController@updateTransaction')->name('admin.get.update.transaction');
+        Route::post('/update/{id}','AdminTransactionController@saveTransaction');
+
+    });
 });
