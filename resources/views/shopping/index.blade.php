@@ -71,7 +71,7 @@
                     <div class="shoping__checkout">
                         <h5>Cart Total</h5>
                         <ul>
-                            <li>Total <span>${{ \Cart::total() }}</span></li>
+                            <li>Total <span>${{ \Cart::subtotal() }}</span></li>
                             <!-- <li>Total <span>${{ \Cart::total() }}</span></li>    -->
                         </ul>
                         <a href="{{route('get.form.pay')}}" class="primary-btn">PROCEED TO CHECKOUT</a>

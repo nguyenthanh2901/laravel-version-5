@@ -114,8 +114,8 @@
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
-                            <li class="active"><a href="{{route('home')}}">Home</a></li>
-                            <li><a href="{{route('get.product.list')}}">Categories</a>
+                            <li class="{{\Request::route()->getName()== 'home' ? 'active' : ''}}"><a href="{{route('home')}}">Home</a></li>
+                            <li class="{{\Request::route()->getName()== 'get.product.list' ? 'active' : ''}}"><a href="{{route('get.product.list')}}">Categories</a>
                                 <ul class="header__menu__dropdown">
                                 @if(isset($categories))
                                 @foreach($categories as $cate)
@@ -124,7 +124,7 @@
                                 @endif
                                 </ul>
                             </li>
-                            <li><a href="{{route('get.list.article')}}">Blog</a>
+                            <li class="{{\Request::route()->getName()== 'get.list.article' ? 'active' : ''}}"><a href="{{route('get.list.article')}}">Blog</a>
                                 <ul class="header__menu__dropdown">
                                 @if(isset($article))
                                 @foreach($article as $cate)
@@ -133,8 +133,8 @@
                                 @endif
                                 </ul>
                             </li>
-                            <li><a href="{{route('get.contact')}}">Contact</a></li>
-                             <li><a href="{{route('get.contact')}}">About us</a></li>
+                            <li class="{{\Request::route()->getName()== 'get.contact' ? 'active' : ''}}"><a href="{{route('get.contact')}}">Contact</a></li>
+                             <li ><a href="{{route('get.contact')}}">About us</a></li>
 
                         </ul>
                     </nav>
@@ -145,7 +145,7 @@
                             <!-- <li><a href="#"><i class="fa fa-heart"></i> <span></span></a></li> -->
                             <li><a href="{{route('get.list.shopping.cart')}}"><i class="fa fa-shopping-bag"></i> <span>{{Cart::count()}}</span></a></li>
                         </ul>
-                        <div class="header__cart__price">item: <span>${{ \Cart::total() }}</span></div>
+                        <div class="header__cart__price">item: <span>${{ \Cart::subtotal() }}</span></div>
                     </div>
                 </div>
             </div>

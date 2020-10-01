@@ -105,7 +105,7 @@
                                 @endforeach
                                 </ul>
                                 <!-- <div class="checkout__order__subtotal">Subtotal <span>$750.99</span></div> -->
-                                <div class="checkout__order__total">Total <span>${{ \Cart::total() }}</span></div>
+                                <div class="checkout__order__total">Total <span>${{ \Cart::subtotal() }}</span></div>
                                 <!-- <div class="checkout__input__checkbox">
                                     <label for="acc-or">
                                         Create an account?
